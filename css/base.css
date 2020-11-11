@@ -69,3 +69,11 @@ body {
 .clearfix {
     *zoom: 1
 }
+
+/*当ul无法撑开盒子高度，就在ul父盒子结束前再加上一个使用下面样式的div*/
+.clearfloat {
+    clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+} 
