@@ -30,7 +30,6 @@
 .arr-icon::after {
 	font-family: "iconfont";
 	content:"\e665";
-
 }
 /*header导航模块*/
 .header {
@@ -72,8 +71,6 @@
 	color: #fff;
 	font-size: 16px;
 }
-
-/*购物车样式*/
 .shopcar {
 	position: absolute;
 	left: 195px;
@@ -81,6 +78,7 @@
 	font-size: 19px;
 	color: #333333;
 }
+/*购物车样式*/
 .shopcar_bar {
 	font-size: 16px;
 	color: #c81623;
@@ -399,38 +397,68 @@
 	background-color: #c81623;
 	color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.mylove-bd {
+	position: relative;
+	height: 360px;
+}
+.prev,
+.next {
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	display: block;
+	width: 19px;
+	height: 48px;
+}
+.prev {
+	left: 0;
+	background: #ddd url(../image/prev.png) no-repeat center;
+}
+.next {
+	right: 0;
+	background: #ddd url(../image/next.png) no-repeat center;
+}
+.mylove-bd ul {
+	position: absolute;
+	top: 20px;
+	left: 39px;
+}
+.mylove-bd ul li {
+	float: left;
+	width: 246px;
+	height: 306px;
+	border: 1px dotted #cacaca;
+	padding: 18px 20px;
+	text-align: center;
+}
+.mylove-bd ul li:nth-child(n+1) {
+	margin-left: -1px;
+}
+.mylove-bd ul li img {
+	width: 160px;
+	height: 160px;
+}
+.mylove-bd ul li p {
+	color: #333333;
+	font-size: 12px;
+	text-align: left;
+	margin-top: 7px;
+}
+.mylove-bd ul li span {
+	display: block;
+	font-size: 14px;
+	color: #c81623;
+	margin-top: 11px;
+}
+.mylove-bd-btn {
+	width: 124px;
+	height: 30px;
+	border: 1px solid #999;
+	border-radius: 5px;
+	background-color: #fff;
+	line-height: 30px;
+	color: #333;
+}
 /*底部模块*/
 .footer {
 	height: 415px;
