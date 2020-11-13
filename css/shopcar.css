@@ -299,6 +299,8 @@
 	display: block;
 	height: 48px;
 	width: 110px;
+	line-height: 48px;
+	text-align: center;
 	background-color: #e50011;
 	float: right;
 	color: #fefefe;

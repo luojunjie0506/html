@@ -135,7 +135,7 @@
 	content: "\e687";
 }
 .ziti {
-	border:1px solid #ddd;;
+	border:1px solid #ddd;
 }
 .cont-info {
 	height: 35px;
@@ -215,13 +215,98 @@
 .goods_huo {
 	font-size: 12px;
 	padding-right: 24px;
-
 }
 .goods_price {
 	font-size: 14px;
 	color: #e12228;
 	font-weight: 700;
 }
+.order-info, .order-qqq {
+	border: 1px solid #ddd;
+	margin-top: -1px;
+}
+.order-info {
+	height: 94px;
+	padding-top: 20px;
+	padding-right: 20px;
+}
+.order-info ul {
+	float: right;
+}
+.order-info ul li {
+	display: block;
+	height: 19px;
+	line-height: 19px;
+}
+.biaoti ,
+.num {
+	float: right;
+	text-align: right;
+	font-size: 12px;
+}
+.biaoti {
+	color: #666;
+	width: 160px;
+}
+.biaoti span {
+	color: #e12228;
+}
+.num {
+	color: #333;
+	width: 100px;
+}
+.num p {
+	font-size: 12px;
+	color: #e60012;
+	font-weight: 700;
+}
+.order-qqq {
+	position: relative;
+	height: 72px;
+	background-color: #f4f4f4;
+}
+.yunfei,.shouhuo {
+	position: absolute;
+	right: 20px;
+	height: 20px;
+	line-height: 20px;
+}
+.yunfei {
+	top: 15px;
+}
+.yunfei .num p {
+	font-size: 16px;
+}
+.shouhuo {
+	top: 35px;
+	font-size: 12px;
+	color: #999;
+}
+.order-btn {
+	position: relative;
+	height: 100px;
+}
+.order-btn button {
+	position: absolute;
+	top: 20px;
+	right: 32px;
+	background-color: #df3033;
+	color: #fff;
+	height: 46px;
+	width: 142px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*底部模块*/
 .footer {
