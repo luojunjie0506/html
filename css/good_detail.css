@@ -507,23 +507,15 @@ p {
 	border: 1px solid #dddddd;
 }
 .detail_r_x_bh  ul li {		
-	float: left;	
-}
-.detail_r_x_bh  ul li a {
-	display: inline-block;
+	float: left;
 	text-align: center;
-	line-height: 40px;
-	color: #000;
+	line-height: 38px;
 	font-size: 12px;
-	padding: 0 20px;
+	padding: 0 20px;	
 }
-.detail_r_x_bh  ul li:hover {
- 	background-color: #c81623;
- 	color: #fff;
- }
- .detail_r_x_bh  ul li a:hover {
- 	color: #fff;
- }
+.canshu {
+	display: none;
+}
  .canshu_1 {
  	padding-top: 20px;	
  	padding-left: 20px;
@@ -589,4 +581,8 @@ p {
 }
 .shouji_pingjia {
 	color: #575ab4;
+}
+.red {
+	background-color: #c81623;
+	color: #fff;
 }
