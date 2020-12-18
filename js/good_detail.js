@@ -14,3 +14,8 @@ for(var i=0; i<detail.length; i++) {
         canshu[num].style.display = 'block'
     }
 }
+var pic = document.querySelector('.pic')
+var mask = document.querySelector('.mask')
+pic.addEventListener('mouseover',function() {
+    mask.style.display = 'block'
+})
