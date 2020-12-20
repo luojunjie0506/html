@@ -32,9 +32,12 @@
 }
 .pic {
 	position: relative;
-	height: 400px;
+	height: 402px;
 	border: 1px solid #ededed;
-	background: #fff url(../upload/44.png) no-repeat center;
+}
+.pic_img {
+	width: 398px;
+	height: 400px;
 }
 .spec-list {
 	position: relative;
@@ -597,11 +600,20 @@ p {
 	height: 200px;
 	background-color: rgba(0, 0, 0, .3);
 }
+.big_box {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 425px;
+	width: 400px;
+	height: 400px;
+	text-align: center;
+	line-height: 400px;
+	background-color: #fff;
+	overflow: hidden;
+}
 .big_img {
 	position: absolute;
 	top: 0;
-	left: 420px;
-	width: 400px;
-	height: 400px;
-	background-color: red;
+	left: 0;
 }
