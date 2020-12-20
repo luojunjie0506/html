@@ -1,4 +1,5 @@
 window.addEventListener('load',function() {
+    // 列表切换
     var detail = document.querySelector('.detail_r_x_bh').querySelectorAll('li')
     var canshu = document.querySelectorAll('.canshu')
     for(var i=0; i<detail.length; i++) {
@@ -15,6 +16,23 @@ window.addEventListener('load',function() {
             canshu[num].style.display = 'block'
         }
     }
+
+    // 图片切换
+    var imgs = document.querySelector('.spec-list').querySelectorAll('img')
+    var pic_img = document.querySelector('.pic_img')
+    for(var i=0; i<imgs.length; i++) {
+        imgs[i].addEventListener('mousemove',function() {
+            // 先把其他选中的样式清除
+            for(var b=0; b<imgs.length; b++) {
+                imgs[b].parentNode.style.border = 'none'
+            }
+            this.parentNode.style.border = '1px solid #c81623'
+            pic_img.src = this.getAttribute('src')
+            big_img.src = this.getAttribute('src')
+        })
+    }
+
+    // 商品放大镜
     var pic = document.querySelector('.pic')
     var mask = document.querySelector('.mask')
     var big_box = document.querySelector('.big_box')
@@ -23,7 +41,6 @@ window.addEventListener('load',function() {
     pic.addEventListener('mouseover',function() {
         mask.style.display = 'block'
         big_box.style.display = 'block'
-
     })
     pic.addEventListener('mouseout',function() {
         mask.style.display = 'none'
@@ -57,6 +74,19 @@ window.addEventListener('load',function() {
         var bigY = picY / picYMax * bigYMax
         big_img.style.top = 0 - bigY + 'px'
         big_img.style.left = 0 - bigX + 'px'
-
     })
+
+    // 处理配置栏点击a标签无跳转
+    var bjs = document.querySelector('.ma').querySelectorAll('a')
+    for(var i=0; i<bjs.length; i++) {
+        bjs[i].href = 'javascript:;'
+    }
+
+    // 数量的变化
+    var num = document.querySelector('.num_1')
+    var jia = document.querySelector('.num_jia')
+    var jian = document.querySelector('.num_jian')
+    var shuliang = 0
+    jia.href = 'javascript:;'
+    jian.href = 'javascript:;'
 })

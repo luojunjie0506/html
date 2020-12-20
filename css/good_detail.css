@@ -48,17 +48,19 @@
 	position: absolute;
 	left: 25px;
 	top: 30px;
-	line-height: 60px;
+}
+.spec-list ul li:first-child {
+	border: 1px solid #c81623;
 }
 .spec-list ul li {
 	float: left;
 	width: 58px;
 	height: 60px;
 	margin-left: 9px;
-	text-align: center;
 }
-.spec-list ul li:hover {
-	border: 1px solid #c81623;
+.spec-list ul li img {
+	width: 56px;
+	height: 58px;
 }
 .prev,
 .next {
