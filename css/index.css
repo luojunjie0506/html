@@ -10,9 +10,11 @@
 	width: 721px;
 	height: 455px;
 	background-color: skyblue;
+	overflow: hidden;
 }
 .prev,
 .next {
+	display: none;
 	position: absolute;
 	top: 50%;
 	margin-top: -15px;
@@ -21,6 +23,7 @@
 	background-color: rgba(0,0,0,0.15);
 	font-size: 20px;
 	line-height: 35px;
+	z-index: 1;
 }
 .prev {
 	left: 0;
@@ -32,27 +35,33 @@
 }
 .prev span,
 .next span {
-	color: rgba(255,255,255,.8)
+	color: rgba(255,255,255,.8);
+}
+.list>li {
+	float: left;
+	margin-left: 8px;
+	border: 6px solid rgba(0,0,0,.1);
+	border-radius: 50%;	
 }
 .list {
 	position: absolute;
 	bottom: 10px;
 	right: 320px;
 }
-.list i {
+.current {
+	border: 6px solid #fff !important;
+}
+.gun {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 800%;
+}
+.gun li {
 	float: left;
-	width: 8px;
-	height: 8px;
-	margin-left: 10px;
-	border: 1px solid rgba(0,0,0,.1);
-	background-color: rgba(255,255,255,.5);
-	border-radius: 50%;	
 }
-.list i:hover {
-	background-color: #fff;
-}
-.focus ul li img {
-	width: 100%;
+.gun li img {
+	width: 721px;
 	height: 455px;
 }
 .newsflash {
