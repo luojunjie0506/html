@@ -1,4 +1,28 @@
 window.addEventListener('load',function() {
+    // 返回顶部功能
+    var back_top = document.querySelector('.back_top')
+    var recom = document.querySelector('.recom')
+    window.addEventListener('scroll',function() {
+        console.log(window.pageYOffset)
+        if(window.pageYOffset >= recom.offsetTop ) {
+            back_top.style.display = 'block'
+            back_top.style.position = 'fixed'
+            back_top.style.top = 200 + 'px'
+            back_top.style.right = '40px'
+        }
+        if(window.pageYOffset < recom.offsetTop ) {
+            back_top.style.display = 'none'
+            back_top.style.position = 'absolute'
+            back_top.style.top = '500px'
+        }
+    })
+    back_top.addEventListener('click',function() {
+        animate_top(window,0)
+    })
+
+
+    
+
     // 动态生成小圆点
     var focus = document.querySelector('.focus')
     var list_img = document.querySelector('.gun').querySelectorAll('li')
