@@ -38,7 +38,7 @@ $(function() {
     $('.jian').click(function() {
         $(this).prop('href','javascript:;')
         var num = $(this).siblings('.shuliang').val()
-        var price = $(this).parents('.t-num').siblings('.t-price').html()
+        var price = $(this).parents('.t-num').siblings('.t-price').text()
         console.log(price)
         if(num == 0 ) {
             num = 0
@@ -47,28 +47,28 @@ $(function() {
         }
         var sum = num * price
         $(this).siblings('.shuliang').val(num)
-        $(this).parents('.t-num').siblings('.t-sum').html(sum.toFixed(2))
+        $(this).parents('.t-num').siblings('.t-sum').text(sum.toFixed(2))
         $().sum()
     })
     $('.jia').click(function() {
         $(this).prop('href','javascript:;')
         var num = $(this).siblings('.shuliang').val()
-        var price = $(this).parents('.t-num').siblings('.t-price').html()
+        var price = $(this).parents('.t-num').siblings('.t-price').text()
         num ++
         $(this).siblings('.shuliang').val(num)
         var sum = num * price
-        $(this).parents('.t-num').siblings('.t-sum').html(sum.toFixed(2))
+        $(this).parents('.t-num').siblings('.t-sum').text(sum.toFixed(2))
         $().sum()
     }) 
 })
 
 // 计算购物车总计的方法
 jQuery.fn.sum=function(){
-    var cd = $('.shopcar_item').find('.t-sum').length
+    // 金额
     var shopcar_sum = 0
-    for(var i=0; i<cd; i++) {
-        shopcar_sum = shopcar_sum + parseFloat($('.shopcar_item').find('.t-sum').eq(i).html())
-    }
+    $('.shopcar_item').find('.t-sum').each(function(i,ele) {
+        shopcar_sum += parseFloat($(ele).text())
+    })
     $('.shopcar_sum').html(shopcar_sum.toFixed(2))
 }
 
