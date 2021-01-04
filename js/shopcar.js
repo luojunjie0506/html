@@ -5,6 +5,7 @@ $(function() {
         $('.item_title .item_title_l>input').prop('checked',index)
         $('.item_body .t-checkbox>input').prop('checked',index)
         $('.checkAll').prop('checked',index)
+        getSum()
     })
     // 店铺选择
     $('.item_title .item_title_l>input').change(function() {
@@ -17,6 +18,7 @@ $(function() {
         } else {
             $('.checkAll').prop('checked',false)
         }
+        getSum()
     })
     // 种类的选择
     $('.shopcar_item').mousemove(function() {
@@ -32,8 +34,8 @@ $(function() {
         } else {
             $(this).find('.item_title .item_title_l>input').prop('checked',false)
         }
+        getSum()
     })
-    $().sum()
     // 数量加减
     $('.jian').click(function() {
         $(this).prop('href','javascript:;')
@@ -48,7 +50,7 @@ $(function() {
         var sum = num * price
         $(this).siblings('.shuliang').val(num)
         $(this).parents('.t-num').siblings('.t-sum').text(sum.toFixed(2))
-        $().sum()
+        getSum()
     })
     $('.jia').click(function() {
         $(this).prop('href','javascript:;')
@@ -58,18 +60,27 @@ $(function() {
         $(this).siblings('.shuliang').val(num)
         var sum = num * price
         $(this).parents('.t-num').siblings('.t-sum').text(sum.toFixed(2))
-        $().sum()
-    }) 
+        getSum()
+    })
 })
 
 // 计算购物车总计的方法
-jQuery.fn.sum=function(){
+function getSum() {
     // 金额
     var shopcar_sum = 0
-    $('.shopcar_item .t-sum').each(function(i,ele) {
-        shopcar_sum += parseFloat($(ele).text())
+    var shopcar_num = 0
+    // 循环单选框,判断如果勾选上的话数量和总金额就加起来
+    $('.item_body .t-checkbox>input').each(function(i,ele) {
+        if($(ele).prop('checked') == true) {
+            var money = parseFloat($(this).parents('.t-checkbox').siblings('.t-sum').text())
+            var num = parseInt($(this).parents('ul').find('.shuliang').val()) 
+            // var num = parseFloat($(this).parents('.t-checkbox').siblings('.t-sum')
+            shopcar_sum += money
+            shopcar_num += num
+        }
     })
     $('.shopcar_sum').html(shopcar_sum.toFixed(2))
+    $('.shopcar_num').html(shopcar_num)
 }
 
 
