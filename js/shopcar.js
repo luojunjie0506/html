@@ -66,7 +66,7 @@ $(function() {
 jQuery.fn.sum=function(){
     // 金额
     var shopcar_sum = 0
-    $('.shopcar_item').find('.t-sum').each(function(i,ele) {
+    $('.shopcar_item .t-sum').each(function(i,ele) {
         shopcar_sum += parseFloat($(ele).text())
     })
     $('.shopcar_sum').html(shopcar_sum.toFixed(2))
