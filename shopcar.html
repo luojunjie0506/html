@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/shopcar.css">
 	<link rel="stylesheet" href="font/iconfont.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/shopcar.js"></script>
 </head>
 <body>
 
@@ -64,7 +66,7 @@
 		<div class="shopcar_thead">
 			<ul>
 				<li class="t-checkbox">
-					<input type="checkbox" name="" value="">&nbsp;&nbsp;全选
+					<input type="checkbox" name="" value="" class="checkAll">&nbsp;&nbsp;全选
 				</li>
 				<li class="t-goods">商品</li>
 				<li class="t-props">&nbsp;</li>
@@ -102,8 +104,8 @@
 						<li class="t-price">248.00</li>
 						<li class="t-num">
 							<div class="t-num-btn">
-								<a href="" class="jian">-</a>
-								<input type="text" name="" value="" placeholder="" class="shuliang">
+								<a href="#" class="jian">-</a>
+								<input type="text" name="" value="1" placeholder="" class="shuliang">
 								<a href="#" class="jia">+</a> 
 							</div>
 						</li>
@@ -138,8 +140,8 @@
 							<li class="t-price">248.00</li>
 							<li class="t-num">
 								<div class="t-num-btn">
-									<a href="" class="jian">-</a>
-									<input type="text" name="" value="" placeholder="" class="shuliang">
+									<a href="#" class="jian">-</a>
+									<input type="text" name="" value="1" placeholder="" class="shuliang">
 									<a href="#" class="jia">+</a> 
 								</div>
 							</li>
@@ -181,8 +183,8 @@
 						<li class="t-price">248.00</li>
 						<li class="t-num">
 							<div class="t-num-btn">
-								<a href="" class="jian">-</a>
-								<input type="text" name="" value="" placeholder="" class="shuliang">
+								<a href="#" class="jian">-</a>
+								<input type="text" name="" value="1" placeholder="" class="shuliang">
 								<a href="#" class="jia">+</a> 
 							</div>
 						</li>
@@ -210,8 +212,8 @@
 						<li class="t-price">248.00</li>
 						<li class="t-num">
 							<div class="t-num-btn">
-								<a href="" class="jian">-</a>
-								<input type="text" name="" value="" placeholder="" class="shuliang">
+								<a href="#" class="jian">-</a>
+								<input type="text" name="" value="1" placeholder="" class="shuliang">
 								<a href="#" class="jia">+</a> 
 							</div>
 						</li>
@@ -239,8 +241,8 @@
 						<li class="t-price">248.00</li>
 						<li class="t-num">
 							<div class="t-num-btn">
-								<a href="" class="jian">-</a>
-								<input type="text" name="" value="" placeholder="" class="shuliang">
+								<a href="#" class="jian">-</a>
+								<input type="text" name="" value="1" placeholder="" class="shuliang">
 								<a href="#" class="jia">+</a> 
 							</div>
 						</li>
@@ -288,8 +290,8 @@
 							<li class="t-price">248.00</li>
 							<li class="t-num">
 								<div class="t-num-btn">
-									<a href="" class="jian">-</a>
-									<input type="text" name="" value="" placeholder="" class="shuliang">
+									<a href="#" class="jian">-</a>
+									<input type="text" name="" value="1" placeholder="" class="shuliang">
 									<a href="#" class="jia">+</a> 
 								</div>
 							</li>
@@ -319,7 +321,7 @@
 		<!-- 购物车结算栏 -->
 		<div class="shopcar-bar">
 			<div class="item_title_l shopcar-bar-l">
-				<input type="checkbox" name="" value="">&nbsp;&nbsp;
+				<input type="checkbox" name="" value="" class="checkAll">&nbsp;&nbsp;
 				<span class="dian">全选</span>
 				<a href="#">删除选中的商品</a>
 				<a href="#">移到我的关注</a>
@@ -330,11 +332,11 @@
 			</a>
 			<div class="shopcar-bar-r ">
 				<div class="p-1 .clearfix">
-					<span>¥16283.00</span>
+					<span class="shopcar_sum">¥0.00</span>
 					<p>已选择0件商品  总价（不含运费）&nbsp;&nbsp;：&nbsp;&nbsp;</p>
 				</div>
 				<div class="p-2 .clearfix">
-					<span>-¥20.00</span>
+					<span>-20.00</span>
 					<p>已节省&nbsp;&nbsp;：&nbsp;&nbsp;</p>
 				</div>
 			</div>
