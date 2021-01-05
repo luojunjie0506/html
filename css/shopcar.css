@@ -278,6 +278,7 @@
 	color: #333;
 }
 .shopcar-bar {
+	margin-top: 10px;
 	height: 50px;
 	width: 1200px;
 	border: 1px solid #dddddd;

@@ -62,6 +62,27 @@ $(function() {
         $(this).parents('.t-num').siblings('.t-sum').text(sum.toFixed(2))
         getSum()
     })
+    // 单品删除
+    $('.shopcar_item .t-action>a:even').click(function() {
+        var num = $(this).parents('.item_body').children().length  
+        $(this).parents().eq(-6).remove()
+        getSum()
+    })
+    // 选择删除
+    $('.del_xz').click(function() {
+        $('.item_body .t-checkbox>input:checked').each(function(i,ele) {
+            $(ele).parents().eq(-6).remove()
+        })
+        getSum()
+    })
+    // 全部删除
+    $('.del_all').click(function() {
+        $('.shopcar_item').each(function(i,ele) {
+            $(ele).remove()
+        })
+        getSum()
+    })
+    
 })
 
 // 计算购物车总计的方法
