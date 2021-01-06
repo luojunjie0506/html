@@ -5,12 +5,14 @@ $(function() {
         $('.item_title .item_title_l>input').prop('checked',index)
         $('.item_body .t-checkbox>input').prop('checked',index)
         $('.checkAll').prop('checked',index)
+        $('.item_body>div').toggleClass('check-item')
         getSum()
     })
     // 店铺选择
     $('.item_title .item_title_l>input').change(function() {
         var index = $(this).prop('checked')
         $(this).parents('.item_title').siblings('.item_body').find('.t-checkbox>input').prop('checked',index)
+        $(this).parents('.item_title').siblings('.item_body').toggleClass('check-item')
         // 如果两个店铺都勾上,那就把全选勾上
         var len = $('.item_title .item_title_l>input').length
         if($('.item_title .item_title_l>input:checked').length == len ) {
@@ -20,21 +22,24 @@ $(function() {
         }
         getSum()
     })
-    // 种类的选择
-    $('.shopcar_item').mousemove(function() {
-        var zl_len = $(this).find('.t-checkbox>input').length
-        var xz_len = $(this).find('.t-checkbox>input:checked').length
+    
+    // 单品选择
+    $('.item_body .t-checkbox>input').change(function(){
+        $(this).parents('').eq(-6).toggleClass('check-item')
+        var zl_len = $(this).parents('.item_body').find('.t-checkbox>input:checked').length // 所在父元素的子元素长度
+        var xz_len = $(this).parents('.item_body').find('.t-checkbox>input').length // 已选择子元素长度
+        // 判断同一个店的商品
         if(zl_len == xz_len) {
-            $(this).find('.item_title .item_title_l>input').prop('checked',true)
-            if($('.item_title .item_title_l>input:checked').length == $('.item_title .item_title_l>input').length) {
+            $(this).parents('.item_body').siblings('.item_title').find('input').prop('checked',true)
+            // 判断所有店是否都勾选上
+            if($('.item_title input:checked').length == $('.item_title input').length) {
                 $('.checkAll').prop('checked',true)
             } else {
-                $('.checkAll').prop('checked',false)
+                $('.checkAll').prop('checked',false) 
             }
         } else {
-            $(this).find('.item_title .item_title_l>input').prop('checked',false)
+            $(this).parents('.item_body').siblings('.item_title').find('input').prop('checked',false)
         }
-        getSum()
     })
     // 数量加减
     $('.jian').click(function() {
