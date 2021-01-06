@@ -64,7 +64,11 @@ $(function() {
     })
     // 单品删除
     $('.shopcar_item .t-action>a:even').click(function() {
-        var num = $(this).parents('.item_body').children().length  
+        // 用该元素的父元素的兄弟元素个数来判断该元素是不是最后一个,如果是就把该shopcar_item都删掉
+        var num = $(this).parents().eq(-6).siblings().length  
+        if(num == 0 ) {
+            $(this).parents('.shopcar_item').remove()
+        }
         $(this).parents().eq(-6).remove()
         getSum()
     })
@@ -82,7 +86,6 @@ $(function() {
         })
         getSum()
     })
-    
 })
 
 // 计算购物车总计的方法
