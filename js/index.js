@@ -3,7 +3,6 @@ window.addEventListener('load',function() {
     var back_top = document.querySelector('.back_top')
     var recom = document.querySelector('.recom')
     window.addEventListener('scroll',function() {
-        console.log(window.pageYOffset)
         if(window.pageYOffset >= recom.offsetTop ) {
             back_top.style.display = 'block'
             back_top.style.position = 'fixed'
@@ -19,9 +18,6 @@ window.addEventListener('load',function() {
     back_top.addEventListener('click',function() {
         animate_top(window,0)
     })
-
-
-    
 
     // 动态生成小圆点
     var focus = document.querySelector('.focus')
@@ -113,7 +109,6 @@ window.addEventListener('load',function() {
             for(var i=0; i<list_img.length-1; i++ ) {
                 list_quan.children[i].className = ''
             }
-            console.log(circle)
             list_quan.children[circle].className = 'current'
         }
     })
@@ -122,6 +117,27 @@ window.addEventListener('load',function() {
     var timer = setInterval(function() {
         next.click()
     },2000)
-
 })
 
+$(function() {
+    scrollShow()
+    function scrollShow() {
+        if($(document).scrollTop() >= $('.recom').offset().top) {
+            $('.fixedtool').fadeIn()
+        } else {
+            $('.fixedtool').fadeOut()
+        }
+    }
+    $(window).scroll(function() {
+        scrollShow()
+    })
+    $('.fixedtool li').on('click',function() {
+        var num = $(this).index()
+        var cc = $('.floor>div').eq(num).offset().top 
+        // 只有元素才能使用animate,document和widows都不是元素
+        $('body ,html').stop().animate({
+            scrollTop:cc
+        },500)
+        $(this).addClass('currentd').siblings().removeClass('currentd')
+    })
+})
