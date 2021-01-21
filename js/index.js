@@ -122,18 +122,26 @@ window.addEventListener('load',function() {
 $(function() {
     scrollShow()
     function scrollShow() {
-        if($(document).scrollTop() >= $('.recom').offset().top) {
+        // 左边导航栏显示隐藏
+        if($(document).scrollTop() >= $('.youqu').offset().top) {
             $('.fixedtool').fadeIn()
         } else {
             $('.fixedtool').fadeOut()
         }
+        // 滚动屏幕左边导航栏会相应改变
+        $('.floor .w').each(function(i,ele) {
+            console.log( $(ele).offset().top)
+            if($(document).scrollTop() >= $(ele).offset().top) {
+                $('.fixedtool li').eq(i).addClass('currentd').siblings().removeClass('currentd')
+            }
+        })
     }
     $(window).scroll(function() {
         scrollShow()
     })
     $('.fixedtool li').on('click',function() {
         var num = $(this).index()
-        var cc = $('.floor>div').eq(num).offset().top 
+        var cc = $('.floor .w').eq(num).offset().top 
         // 只有元素才能使用animate,document和widows都不是元素
         $('body ,html').stop().animate({
             scrollTop:cc
